@@ -40,9 +40,9 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+/* input[type=number] {
   -moz-appearance: textfield;
-}
+} */
 
 td{
     vertical-align: middle !important;
@@ -443,6 +443,11 @@ form button {
     border-radius: 0px 15px 0px 15px;
 }
 
+.prato:nth-child(even) .iconeLike, .prato:nth-child(even) .iconeLikeativo {
+    left: 15px !important;
+    right: auto !important;
+}
+
 .prato:nth-child(even) .nome {
     display: flex;
     justify-content: end;
@@ -788,4 +793,35 @@ fieldset, label { margin: 0; padding: 0; }
     border-radius: 10px;
     border: none;
     font-size: 18px;
+}
+
+
+.btnLoja, .btnLoja:hover, .btnLoja:active, .btnLoja:focus {
+    background: var(--main-color);
+    color: #fff;
+    padding: 10px 50px;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+}
+
+
+.iconeMaisCarrinho{
+    font-size: 15px;
+}
+
+.iconeLike{
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    font-size: 25px;
+    color: #fff;
+}
+
+.iconeLikeativo{    
+    color: var(--main-color);
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    font-size: 25px;    
 }

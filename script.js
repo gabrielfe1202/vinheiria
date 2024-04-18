@@ -74,6 +74,7 @@ if (document.getElementById("titulo_prato") != null) {
       } else {
         container += `<p class="nome">${pratos[i].nome}</p>`
       }
+      container += `<a href='javascript: AdicionarFavoritos(${pratos[i].cod})' id="prod_${pratos[i].cod}"><i class="fa fa-heart-o iconeLike" aria-hidden="true"></i></a>`
       container += `<p class="descricao">${pratos[i].descricao}</p>`
       container += `<p class="preco">R$ ${pratos[i].preco}</p>`
       container += `<a class="botao" href="produto.html?cod=${pratos[i].cod}">Ver mais</a>`
@@ -134,10 +135,10 @@ jQuery(document).ready(function () {
 
     if (user == "user" && pass == "1234") {
       window.location.href = "pedidoFechado.html"
+      DeletaCarrinho()
     } else {
       document.getElementById("erroLogin").innerText = "Usuario ou senha invalidos"
-    }
-
+    }    
     return false;
   })
 
@@ -216,9 +217,9 @@ function carregarCarrinho() {
           <td>R$ ${item.preco}</td>
           <td>
             <div class="quantidade-buttons">
-              <button onclick="diminuirQuantidade(${index})">-</button>
+              <button onclick="diminuirQuantidade(${index})"><i class="fa fa-minus iconeMaisCarrinho" aria-hidden="true"></i></button>
               <input type="number" value="${item.quantidade}" onchange="editarQuantidade(${index}, this.value, this)">
-              <button onclick="aumentarQuantidade(${index})">+</button>
+              <button onclick="aumentarQuantidade(${index})"><i class="fa fa-plus iconeMaisCarrinho" aria-hidden="true"></i></button>
             </div>
           </td>
           <td><button onclick="removerProduto(${index})" class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
@@ -239,6 +240,11 @@ function carregarCarrinho() {
   total = subtotal + frete;
 
   document.getElementById("total").innerText = "R$ " + total.toFixed(2).toString().replace(".", ",");
+
+  if(produtos.length == 0){
+    document.getElementById("lojaCarrinho").style.display = "none"
+    document.getElementById("carrinhoVazio").style.display = "flex"
+  }
 
 }
 
@@ -342,6 +348,11 @@ function diminuirQuantidade(index) {
   }
 }
 
+function DeletaCarrinho() {
+  localStorage.removeItem("produtos");
+  // carregarCarrinho();
+}
+
 function adicionarAvaliacao() {
   const strats = document.querySelector('input[name="rating"]:checked')
   const texto = document.getElementById("minhaAvaliacao");
@@ -372,4 +383,7 @@ function adicionarAvaliacao() {
   }
 }
 
-
+function AdicionarFavoritos(id){  
+  var elemento = document.getElementById("prod_" + id)
+  elemento.innerHTML = "<i class='fa fa-heart iconeLikeativo' aria-hidden='true'></i>"
+}

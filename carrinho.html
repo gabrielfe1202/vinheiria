@@ -46,7 +46,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="armonizacoes.html">Armonizações</a>
-                          </li> 
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="loja.html?categoria=all" id="navbarDropdown3"
                                 role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -55,11 +55,11 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
                                 <a class="dropdown-item" href="loja.html?categoria=all">Completo</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="loja.html?categoria=entradas">Entradas</a>
+                                <a class="dropdown-item" href="loja.html?categoria=armonizar">Para armonizar</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="loja.html?categoria=principal">Pratos principais</a>
+                                <a class="dropdown-item" href="loja.html?categoria=jantar">Para jantar</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="loja.html?categoria=bebidas">Bebidas</a>
+                                <a class="dropdown-item" href="loja.html?categoria=degustar">Para degustar</a>
                             </div>
                         </li>
                         <li class="nav-item">
@@ -89,10 +89,10 @@
     </section>
 
 
-    <div class="container" style="padding: 100px 0px;">        
-        <div class="row">
+    <div class="container" style="padding: 100px 0px;">
+        <div class="row" id="lojaCarrinho">
             <div class="col-md-8" id="carrinho">
-                
+
             </div>
 
             <div class="col-md-4">
@@ -111,27 +111,37 @@
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 Desconto
                                 <div class="input-group" style="width: 70%;" id="contCupom">
-                                  <input type="text" class="form-control" placeholder="Cupom" name="cupom" id="cupom">
-                                  <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button" onclick="aplicarCupom()">Add</button>
-                                  </div>
+                                    <input type="text" class="form-control" placeholder="Cupom" name="cupom" id="cupom">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button"
+                                            onclick="aplicarCupom()">Add</button>
+                                    </div>
                                 </div>
                                 <span id="desconto" style="display: none;"></span>
-                              </li>
+                            </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 Total
                                 <span id="total"></span>
                             </li>
                         </ul>
-                        <a href="javascript: fecharPedido();" class="btn btn-primary btn-block mt-3">Finalizar Compra</a>
+                        <a href="javascript: fecharPedido();" class="btn btn-primary btn-block mt-3">Finalizar
+                            Compra</a>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="row" id="carrinhoVazio" style="justify-content: center;align-items: center;display: none;">
+            <div class="col-md-12">
+                <h1>Carrinho vazio</h1>
+            </div>
+            <div class="col-md-12 text-center">
+                <a href="loja.html" class="btnLoja">Loja</a>
             </div>
         </div>
     </div>
 
 
-    
+
 
     <footer class="rodape">
         <div class="container">

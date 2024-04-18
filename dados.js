@@ -18,7 +18,7 @@ var conteudos = {
         "descricao": "Ingredientes: Espaguete com almôndegas em forma de sorrisos e molho de tomate. Valor nutricional: Proteínas (carne), carboidratos (macarrão) e gordura (molho). Alergênicos: Glúten (macarrão), carne.",
         "preco": "29,90",
         "imagem": "img/macarrao.jpg",
-        "categoria": "principal",
+        "categoria": "jantar",
         "avaliacoes": [
           {
             "nome": "Thiago Ventura",
@@ -33,7 +33,7 @@ var conteudos = {
         "descricao": "Ingredientes: Risoto de cogumelos com parmesão em formato de palhaço. Valor nutricional: Proteínas (queijo), carboidratos (arroz) e gordura (queijo). Alergênicos: Laticínios (queijo).",
         "preco": "29,90",
         "imagem": "img/risoto.jpg",
-        "categoria": "principal",
+        "categoria": "jantar",
         "avaliacoes": [
           {
             "nome": "Fábio Porchat",
@@ -48,7 +48,7 @@ var conteudos = {
         "descricao": "Ingredientes: Pizzas em formatos divertidos com diversas coberturas e queijo derretido. Valor nutricional: Proteínas (queijo e carnes), carboidratos (massa) e gordura (queijo e carnes).Alergênicos: Glúten (massa), laticínios (queijo",
         "preco": "29,90",
         "imagem": "img/pizza.jpg",
-        "categoria": "principal",
+        "categoria": "jantar",
         "avaliacoes": [
           {
             "nome": "Bruna louise",
@@ -63,7 +63,7 @@ var conteudos = {
         "descricao": "Ingredientes: Salada de frutas frescas com molho de iogurte e granola em formato de sorrisos. Valor nutricional: Rica em fibras e vitaminas (frutas e granola), moderada em gordura (iogurte).Alergênicos: Laticínios (iogurte).",
         "preco": "12,90",
         "imagem": "img/salada.jpg",
-        "categoria": "entradas",
+        "categoria": "armonizar",
         "avaliacoes": [
           {
             "nome": "Victor Sarro",
@@ -83,7 +83,7 @@ var conteudos = {
         "descricao": "Ingredientes: Pão recheado com queijo derretido e bacon crocante. Valor nutricional: Proteínas (queijo e bacon), carboidratos (pão), gordura (bacon). Alergênicos: Glúten (pão), laticínios (queijo), carne (bacon).",
         "preco": "14,50",
         "imagem": "img/pao.jpg",
-        "categoria": "entradas",
+        "categoria": "armonizar",
         "avaliacoes": [
           {
             "nome": "Fábio Porchat",
@@ -98,7 +98,7 @@ var conteudos = {
         "descricao": "Ingredientes: Tiras de queijo empanadas servidas com molho de pimenta Valor nutricional: Rica em proteínas (queijo), gordura (empanado) e carboidratos (molho de pimenta). Alergênicos: Laticínios (queijo), glúten (empanado).",
         "preco": "14,50",
         "imagem": "img/queijo.jpg",
-        "categoria": "entradas",
+        "categoria": "armonizar",
         "avaliacoes": [
           {
             "nome": "Bruna louise",
@@ -113,7 +113,7 @@ var conteudos = {
         "descricao": "Ingredientes: Limonada com gás em garrafas com rótulos divertidos. Valor nutricional: Baixas calorias. Fonte de vitamina C. Alergênicos: Nenhum.",
         "preco": "14,00",
         "imagem": "img/limonada.jpg",
-        "categoria": "bebidas",
+        "categoria": "degustar",
         "avaliacoes": [
           {
             "nome": "Victor Sarro",
@@ -128,7 +128,7 @@ var conteudos = {
         "descricao": "Ingredientes: Suco de laranja e manga servido em copos com canudos engraçados. Valor nutricional: Vitaminas das frutas, baixas calorias. Alergênicos: Nenhum.",
         "preco": "14,90",
         "imagem": "img/suco.jpg",
-        "categoria": "bebidas",
+        "categoria": "degustar",
         "avaliacoes": [
           {
             "nome": "Bruna louise",
@@ -143,7 +143,7 @@ var conteudos = {
         "descricao": "Ingredientes: Coquetel de frutas com guarda-chuvas coloridos. Valor nutricional: Baixas calorias. Alergênicos: Pode variar de acordo com os ingredientes.",
         "preco": "19,90",
         "imagem": "img/drink.jpg",
-        "categoria": "bebidas",
+        "categoria": "degustar",
         "avaliacoes": [
           {
             "nome": "Thiago Ventura",
