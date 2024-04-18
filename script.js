@@ -385,5 +385,10 @@ function adicionarAvaliacao() {
 
 function AdicionarFavoritos(id){  
   var elemento = document.getElementById("prod_" + id)
-  elemento.innerHTML = "<i class='fa fa-heart iconeLikeativo' aria-hidden='true'></i>"
+  if(elemento.innerHTML.includes("-o")){
+    elemento.innerHTML = "<i class='fa fa-heart iconeLikeativo' aria-hidden='true'></i>"
+  }else{
+    elemento.innerHTML = "<i class='fa fa-heart-o iconeLike' aria-hidden='true'></i>"
+  }
+  
 }
