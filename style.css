@@ -14,6 +14,47 @@ body {
     background-size: contain;
 }
 
+.quantidade-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quantidade-buttons button {
+    margin: 0 5px;
+    border: 0px solid #000;
+    background: var(--main-color);
+    width: 25px;
+    height: 25px;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+td{
+    vertical-align: middle !important;
+}
+
+.quantidade-buttons input{
+    width: 100px;
+    text-align: center;
+    border: 1px solid #909090;
+    margin: 0;
+}
+
 .cont_valida {
     padding: 40px;
     border: 1px solid #fff;

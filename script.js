@@ -89,8 +89,7 @@ if (document.getElementById("titulo_prato") != null) {
 container = "";
 var conteudo = conteudos["conteudos"];
 
-for (var i = 0; i < conteudos["conteudos"].length; i++) {
-  if (pratos[i].categoria == cat || cat == 'all' || cat == null) {
+for (var i = 0; i < conteudos["conteudos"].length; i++) {  
     container += '<div class="col-md-10 row prato">';
     container += '<div class="col-md-4">';
     container += `<img class="imagem" src="${conteudo[i].imagem}" style="width: 100%"/>`
@@ -99,8 +98,7 @@ for (var i = 0; i < conteudos["conteudos"].length; i++) {
     container += `<p class="descricao">${conteudo[i].chamada}</p>`
     container += `<a class="botao" href="conteudo.html?cod=${conteudo[i].cod}">Ver mais</a>`
     container += '</div>'
-    container += '</div>'
-  }
+    container += '</div>'  
 }
 
 var conteudoExibir = conteudos["conteudos"][cod - 1];
@@ -221,8 +219,14 @@ function carregarCarrinho() {
           <td style="text-align: right;"><img src="${item.imagem}" alt="${item.produto}" class="produto-img"></td>
           <td>${item.produto}</td>
           <td>R$ ${item.preco}</td>
-          <td>${item.quantidade}</td>
-          <td><button onclick="removerProduto(${index})" class="btn btn-danger">Remover</button></td>
+          <td>
+            <div class="quantidade-buttons">
+              <button onclick="diminuirQuantidade(${index})">-</button>
+              <input type="number" value="${item.quantidade}" onchange="editarQuantidade(${index}, this.value, this)">
+              <button onclick="aumentarQuantidade(${index})">+</button>
+            </div>
+          </td>
+          <td><button onclick="removerProduto(${index})" class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
       `;
   });
 
@@ -325,5 +329,33 @@ function adicionarProduto() {
     styling: 'bootstrap3'
   });
 
+}
+
+function editarQuantidade(index, novaQuantidade, elemento) {
+  let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+  if(novaQuantidade == "" || parseInt(novaQuantidade) < 1){      
+    novaQuantidade = "1"
+    elemento.value = "1"
+  }
+  produtos[index].quantidade = parseInt(novaQuantidade); // Atualiza a quantidade
+  localStorage.setItem("produtos", JSON.stringify(produtos)); // Atualiza o localStorage
+  carregarCarrinho();
+}
+
+function aumentarQuantidade(index) {
+  let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+  produtos[index].quantidade++; // Aumenta a quantidade
+  localStorage.setItem("produtos", JSON.stringify(produtos)); // Atualiza o localStorage
+  carregarCarrinho(); // Recarrega o carrinho  
+}
+
+// Função para diminuir a quantidade de um produto no carrinho
+function diminuirQuantidade(index) {
+  let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+  if (produtos[index].quantidade > 1) {
+      produtos[index].quantidade--; // Diminui a quantidade
+      localStorage.setItem("produtos", JSON.stringify(produtos)); // Atualiza o localStorage
+      carregarCarrinho(); // Recarrega o carrinho
+  }
 }
 
