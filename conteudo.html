@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trabalho Risadas restaurante</title>
+    <title>Trabalho Vinheiria Agnelo</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.png">
 
     <meta property="og:tag" content="">
     <meta property="og:locale" content="pt_BR" />
-    <meta property="og:title" content="Trabalho Risadas restaurante" />
-    <meta property="og:description" content="Trabalho fiap front-end" />
-    <meta property="og:site_name" content="Trabalho Risadas restaurante" />
+    <meta property="og:title" content="Trabalho Vinheiria Agnelo" />
+    <meta property="og:description" content="Trabalho fiap WebDev" />
+    <meta property="og:site_name" content="Trabalho Vinheiria Agnelo" />
     <meta property="og:image" content="http://gabriel.o2ew.com.br/img/logo-original.jpg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,13 +49,13 @@
                     Loja
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-                        <a class="dropdown-item" href="Loja.html?categoria=all">Completo</a>
+                        <a class="dropdown-item" href="loja.html?categoria=all">Completo</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="Loja.html?categoria=entradas">Entradas</a>
+                        <a class="dropdown-item" href="loja.html?categoria=entradas">Entradas</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="Loja.html?categoria=principal">Pratos principais</a>
+                        <a class="dropdown-item" href="loja.html?categoria=principal">Pratos principais</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="Loja.html?categoria=bebidas">Bebidas</a>
+                        <a class="dropdown-item" href="loja.html?categoria=bebidas">Bebidas</a>
                     </div>
                   </li>
                   <li class="nav-item">
@@ -73,22 +73,18 @@
     </header>
 
     <section class="banner2">        
-        <h1>Loja</h1>
+        <h1 id="titulo_conteudo"></h1>
     </section>
   
     <section style="padding: 45px 0px;">
         <div class="container" style="justify-content: center;display: flex;">            
-            <div class="col-md-10 row" id="prato">
-                 <div class="col-md-5">
-                    <img src="" alt="" id="imagem_conteudo">
-                 </div>            
-                 <div class="col-md-7">
-                    <p id="titulo_conteudo">                        
-                    </p>
-                    <p id="texto_conteudo"></p>                                                            
-                 </div>                 
-           
-            </div>            
+            <div class="col-md-10 row" id="prato">                 
+                 <div id="conteudoVer">
+                    <img src="img/macarrao.jpg" alt="" id="imagem_conteudo">
+                    <p id="texto_conteudo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur risus lectus, pretium sed fringilla vel, viverra sed dolor. Aenean nec elementum nulla, et dapibus ante. Nulla nec elementum sapien. In porta mattis nulla, nec lacinia metus sollicitudin vitae. In hac habitasse platea dictumst. Sed in magna tempor, vestibulum neque et, fermentum neque. Nullam nec vestibulum magna. Donec lectus justo, ornare porta dictum a, iaculis sit amet tortor. Nullam suscipit dapibus ante sed imperdiet. Mauris massa nulla, congue ac diam id, laoreet tempor velit. Nam vestibulum rhoncus magna id fermentum. Morbi convallis magna ut mi molestie, et commodo ligula mollis. Proin et lacus augue. Donec pellentesque pellentesque massa. Nulla imperdiet lacus non augue elementum ornare. Curabitur porttitor tempus arcu, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur risus lectus, pretium sed fringilla vel, viverra sed dolor. Aenean nec elementum nulla, et dapibus ante. Nulla nec elementum sapien. In porta mattis nulla, nec lacinia metus sollicitudin vitae. In hac habitasse platea dictumst. Sed in magna tempor, vestibulum neque et, fermentum neque. Nullam nec vestibulum magna. Donec lectus justo, ornare porta dictum a, iaculis sit amet tortor. Nullam suscipit dapibus ante sed imperdiet. Mauris massa nulla, congue ac diam id, laoreet tempor velit. Nam vestibulum rhoncus magna id fermentum. Morbi convallis magna ut mi molestie, et commodo ligula mollis. Proin et lacus augue. Donec pellentesque pellentesque massa. Nulla imperdiet lacus non augue elementum ornare. Curabitur porttitor tempus arcu, </p>
+                 </div>       
+            </div>     
+            
         </div>
     </section>
 
@@ -114,7 +110,7 @@
     <script src="Scripts/pnotify/dist/pnotify.js"></script>
     <script src="Scripts/pnotify/dist/pnotify.buttons.js"></script>
     <script src="Scripts/pnotify/dist/pnotify.nonblock.js"></script>
+    <script src="dados.js"></script>
     <script src="script.js"></script>
-
 </body>
 </html>

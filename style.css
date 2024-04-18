@@ -5,6 +5,10 @@
     --pane-padding: 5px 42px;
 }
 
+.html{
+    scroll-behavior: smooth;
+}
+
 body {
     background: #DCE0D9;
     background-size: contain;
@@ -453,11 +457,6 @@ form button {
     transition: all .5s;
 }
 
-#titulo_conteudo {
-    font-size: 32px;
-    font-weight: 800;
-    color: #fff;
-}
 
 #titulo_prato {
     font-size: 32px;
@@ -466,9 +465,12 @@ form button {
 }
 
 #imagem_conteudo {
-    width: 100%;
+    width: 50%;
     border-radius: 15px;
     color: #fff;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    float: left;
 }
 
 #imagem_prato {
