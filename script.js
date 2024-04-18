@@ -89,25 +89,24 @@ if (document.getElementById("titulo_prato") != null) {
 container = "";
 var conteudo = conteudos["conteudos"];
 
-for (var i = 0; i < conteudos["conteudos"].length; i++) {  
-    container += '<div class="col-md-10 row prato">';
-    container += '<div class="col-md-4">';
-    container += `<img class="imagem" src="${conteudo[i].imagem}" style="width: 100%"/>`
-    container += '</div>'
-    container += '<div class="col-md-8">';    
-    container += `<p class="descricao">${conteudo[i].chamada}</p>`
-    container += `<a class="botao" href="conteudo.html?cod=${conteudo[i].cod}">Ver mais</a>`
-    container += '</div>'
-    container += '</div>'  
+for (var i = 0; i < conteudos["conteudos"].length; i++) {
+  container += '<div class="col-md-10 row prato">';
+  container += '<div class="col-md-4">';
+  container += `<img class="imagem" src="${conteudo[i].imagem}" style="width: 100%"/>`
+  container += '</div>'
+  container += '<div class="col-md-8">';
+  container += `<p class="descricao">${conteudo[i].chamada}</p>`
+  container += `<a class="botao" href="conteudo.html?cod=${conteudo[i].cod}">Ver mais</a>`
+  container += '</div>'
+  container += '</div>'
 }
 
 var conteudoExibir = conteudos["conteudos"][cod - 1];
 
-if (document.getElementById("titulo_conteudo") != null) {  
+if (document.getElementById("titulo_conteudo") != null) {
   document.getElementById("titulo_conteudo").innerHTML = conteudoExibir.titulo
-  document.getElementById("texto_conteudo").innerHTML = conteudoExibir.texto  
-  document.getElementById("imagem_conteudo").src = conteudoExibir.imagem
-  // document.getElementById("conteudoVer").innerHTML = "<img src='img/macarrao.jpg' id='imagem_conteudo'>" + conteudoExibir.texto  
+  document.getElementById("texto_conteudo").innerHTML = conteudoExibir.texto
+  document.getElementById("imagem_conteudo").src = conteudoExibir.imagem;
 }
 
 if (document.getElementById("conteudos") != null) {
@@ -133,10 +132,10 @@ jQuery(document).ready(function () {
     const user = document.getElementById("username").value;
     const pass = document.getElementById("password").value;
 
-    if(user == "user" && pass == "1234"){
+    if (user == "user" && pass == "1234") {
       window.location.href = "pedidoFechado.html"
-    }else{
-      document.getElementById("erroLogin").innerText = "Usuario ou senha invalidos" 
+    } else {
+      document.getElementById("erroLogin").innerText = "Usuario ou senha invalidos"
     }
 
     return false;
@@ -186,16 +185,12 @@ var frete = 0;
 var desconto = 0;
 
 function carregarCarrinho() {
-  // Verifica se há produtos armazenados no localStorage
   const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
 
-  // Seleciona o elemento div onde o carrinho será exibido
   const carrinhoDiv = document.getElementById("carrinho");
 
-  // Limpa o conteúdo anterior
   carrinhoDiv.innerHTML = "";
 
-  // Cria uma tabela para exibir os produtos e quantidades
   const tabela = document.createElement("table");
   tabela.classList.add("table")
   tabela.innerHTML = `
@@ -210,7 +205,7 @@ function carregarCarrinho() {
   total = 0;
   subtotal = 0;
   frete = 0;
-  // Itera sobre os produtos e adiciona cada um à tabela
+
   produtos.forEach((item, index) => {
     subtotal += parseFloat(item.preco.replace(",", ".")) * parseInt(item.quantidade)
     console.log(subtotal)
@@ -231,7 +226,6 @@ function carregarCarrinho() {
   });
 
 
-  // Adiciona a tabela à div do carrinho
   carrinhoDiv.appendChild(tabela);
   document.getElementById("subtotal").innerText = "R$ " + subtotal.toFixed(2).toString().replace(".", ",");
   if (subtotal < 200) {
@@ -271,7 +265,7 @@ function aplicarCupom() {
 
 }
 
-function fecharPedido(){
+function fecharPedido() {
   localStorage.setItem("subTotalPedido", total);
   localStorage.setItem("totalPedido", total);
   localStorage.setItem("fretePedido", frete);
@@ -279,16 +273,14 @@ function fecharPedido(){
   window.location.href = "login.html"
 }
 
-// Função para remover um produto do carrinho
 function removerProduto(index) {
   let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
-  produtos.splice(index, 1); // Remove o produto do array
-  localStorage.setItem("produtos", JSON.stringify(produtos)); // Atualiza o localStorage
-  carregarCarrinho(); // Recarrega o carrinho
+  produtos.splice(index, 1);
+  localStorage.setItem("produtos", JSON.stringify(produtos));
+  carregarCarrinho();
 }
 
 function adicionarProduto() {
-  // Recupera os valores dos campos de entrada  
   const produto = prato.nome;
   const preco = prato.preco;
   const imagem = prato.imagem;
@@ -296,32 +288,24 @@ function adicionarProduto() {
 
   const quantidade = parseInt(quantidadeInput.value);
 
-  // Verifica se os campos estão preenchidos
   if (produto.trim() === "" || isNaN(quantidade) || quantidade <= 0) {
     alert("Por favor, preencha a quantidade corretamente.");
     return;
   }
 
-  // Verifica se já há produtos armazenados no localStorage
   let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
-
-  // Verifica se o produto já existe na lista
   const index = produtos.findIndex(item => item.produto === produto);
 
   if (index !== -1) {
-    // Se o produto já existe, atualiza a quantidade
     produtos[index].quantidade += quantidade;
   } else {
-    // Se o produto não existe, adiciona à lista de produtos
     produtos.push({ produto, quantidade, preco, imagem });
   }
 
-  // Armazena a lista atualizada de produtos no localStorage
   localStorage.setItem("produtos", JSON.stringify(produtos));
 
   quantidadeInput.value = "1";
 
-  // Informa ao usuário que o produto foi adicionado com sucesso
   new PNotify({
     title: 'Adicionado',
     text: "Produto adicionado ao carrinho com sucesso!",
@@ -333,29 +317,59 @@ function adicionarProduto() {
 
 function editarQuantidade(index, novaQuantidade, elemento) {
   let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
-  if(novaQuantidade == "" || parseInt(novaQuantidade) < 1){      
+  if (novaQuantidade == "" || parseInt(novaQuantidade) < 1) {
     novaQuantidade = "1"
     elemento.value = "1"
   }
-  produtos[index].quantidade = parseInt(novaQuantidade); // Atualiza a quantidade
-  localStorage.setItem("produtos", JSON.stringify(produtos)); // Atualiza o localStorage
+  produtos[index].quantidade = parseInt(novaQuantidade);
+  localStorage.setItem("produtos", JSON.stringify(produtos));
   carregarCarrinho();
 }
 
 function aumentarQuantidade(index) {
   let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
-  produtos[index].quantidade++; // Aumenta a quantidade
-  localStorage.setItem("produtos", JSON.stringify(produtos)); // Atualiza o localStorage
-  carregarCarrinho(); // Recarrega o carrinho  
+  produtos[index].quantidade++;
+  localStorage.setItem("produtos", JSON.stringify(produtos));
+  carregarCarrinho();
 }
 
-// Função para diminuir a quantidade de um produto no carrinho
 function diminuirQuantidade(index) {
   let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
   if (produtos[index].quantidade > 1) {
-      produtos[index].quantidade--; // Diminui a quantidade
-      localStorage.setItem("produtos", JSON.stringify(produtos)); // Atualiza o localStorage
-      carregarCarrinho(); // Recarrega o carrinho
+    produtos[index].quantidade--;
+    localStorage.setItem("produtos", JSON.stringify(produtos));
+    carregarCarrinho();
   }
 }
+
+function adicionarAvaliacao() {
+  const strats = document.querySelector('input[name="rating"]:checked')
+  const texto = document.getElementById("minhaAvaliacao");
+  const nome = document.getElementById("nomeAvaliacao");  
+  if (strats == null) {
+    alert("Diga sua nota em estrelas")
+  } else if (texto.value == "") {
+    alert("Escreva sua avaliação")
+  }else if (nome.value == "") {
+    alert("Escreva seu nome")
+  } else {
+
+    console.log(parseFloat(strats.value))
+
+    var cont_avaliacao = ''
+
+    cont_avaliacao += `<div class="avaliacao">`
+    cont_avaliacao += `<div style="display: flex;flex-flow: wrap">`
+    cont_avaliacao += `<p class="nome_avaliacao">${nome.value}:</p><div class="starFundos"><div class="starAvaliacao" style="width:${parseFloat(strats.value) * 20}%"></div></div>`
+    cont_avaliacao += `</div>`
+    cont_avaliacao += `<p class="texto_avaliacao">${texto.value}</p>`
+    cont_avaliacao += `</div>`
+
+    document.getElementById("avaliacoes").innerHTML += cont_avaliacao
+    nome.value = "";
+    texto.value = "";
+    document.getElementById("starhalf").checked = true;
+  }
+}
+
 
