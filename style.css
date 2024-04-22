@@ -5,7 +5,7 @@
     --pane-padding: 5px 42px;
 }
 
-.html{
+.html {
     scroll-behavior: smooth;
 }
 
@@ -19,6 +19,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .quantidade-buttons button {
     margin: 0 5px;
     border: 0px solid #000;
@@ -35,8 +36,8 @@ body {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* Firefox */
@@ -44,11 +45,11 @@ input::-webkit-inner-spin-button {
   -moz-appearance: textfield;
 } */
 
-td{
+td {
     vertical-align: middle !important;
 }
 
-.quantidade-buttons input{
+.quantidade-buttons input {
     width: 100px;
     text-align: center;
     border: 1px solid #909090;
@@ -443,7 +444,8 @@ form button {
     border-radius: 0px 15px 0px 15px;
 }
 
-.prato:nth-child(even) .iconeLike, .prato:nth-child(even) .iconeLikeativo {
+.prato:nth-child(even) .iconeLike,
+.prato:nth-child(even) .iconeLikeativo {
     left: 15px !important;
     right: auto !important;
 }
@@ -741,49 +743,68 @@ form button {
     border: none;
 }
 
-.btn-primary:hover,.btn-primary:focus,.btn-primary:active {
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
     background: var(--main-color);
     border: none !important;
 }
 
-fieldset, label { margin: 0; padding: 0; }
+fieldset,
+label {
+    margin: 0;
+    padding: 0;
+}
 
 /****** Style Star Rating Widget *****/
 
-.rating { 
-  border: none;
-  float: left;
+.rating {
+    border: none;
+    float: left;
 }
 
-.rating > input { display: none; } 
-.rating > label:before { 
-  margin: 5px;
-  font-size: 1.25em;
-  font-family: FontAwesome;
-  display: inline-block;
-  content: "\f005";
+.rating>input {
+    display: none;
 }
 
-.rating > .half:before { 
-  content: "\f089";
-  position: absolute;
+.rating>label:before {
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
 }
 
-.rating > label { 
-  color: #ddd; 
- float: right; 
+.rating>.half:before {
+    content: "\f089";
+    position: absolute;
+}
+
+.rating>label {
+    color: #ddd;
+    float: right;
 }
 
 /***** CSS Magic to Highlight Stars on Hover *****/
 
-.rating > input:checked ~ label, /* show gold star when clicked */
-.rating:not(:checked) > label:hover, /* hover current star */
-.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+.rating>input:checked~label,
+/* show gold star when clicked */
+.rating:not(:checked)>label:hover,
+/* hover current star */
+.rating:not(:checked)>label:hover~label {
+    color: #FFD700;
+}
 
-.rating > input:checked + label:hover, /* hover current star when changing rating */
-.rating > input:checked ~ label:hover,
-.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
-.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+/* hover previous stars in list */
+
+.rating>input:checked+label:hover,
+/* hover current star when changing rating */
+.rating>input:checked~label:hover,
+.rating>label:hover~input:checked~label,
+/* lighten current selection */
+.rating>input:checked~label:hover~label {
+    color: #FFED85;
+}
 
 
 .btnAvaliacao {
@@ -796,7 +817,10 @@ fieldset, label { margin: 0; padding: 0; }
 }
 
 
-.btnLoja, .btnLoja:hover, .btnLoja:active, .btnLoja:focus {
+.btnLoja,
+.btnLoja:hover,
+.btnLoja:active,
+.btnLoja:focus {
     background: var(--main-color);
     color: #fff;
     padding: 10px 50px;
@@ -806,11 +830,11 @@ fieldset, label { margin: 0; padding: 0; }
 }
 
 
-.iconeMaisCarrinho{
+.iconeMaisCarrinho {
     font-size: 15px;
 }
 
-.iconeLike{
+.iconeLike {
     position: absolute;
     top: 8px;
     right: 15px;
@@ -818,10 +842,44 @@ fieldset, label { margin: 0; padding: 0; }
     color: #fff;
 }
 
-.iconeLikeativo{    
+.iconeLikeativo {
     color: var(--main-color);
     position: absolute;
     top: 8px;
     right: 15px;
-    font-size: 25px;    
+    font-size: 25px;
+}
+
+.owl-nav {
+    position: absolute;
+    top: 14vh;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px 15px;
+}
+
+.owl-theme .owl-nav [class*=owl-]{
+    color: #fff !important;
+    font-size: 45px !important;
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span{
+    background: var(--main-color);
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    width: 10px;
+    height: 10px;
+    margin: 5px 7px;
+    background: #7a002781;
+    display: block;
+    /* -webkit-backface-visibility: visible; */
+    transition: opacity .2s ease;
+    border-radius: 30px;
+    
+}
+
+.owl-dots{
+    padding-top: 15px;
 }

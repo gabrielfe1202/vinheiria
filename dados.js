@@ -63,7 +63,7 @@ var conteudos = {
         "descricao": "Ingredientes: Salada de frutas frescas com molho de iogurte e granola em formato de sorrisos. Valor nutricional: Rica em fibras e vitaminas (frutas e granola), moderada em gordura (iogurte).Alergênicos: Laticínios (iogurte).",
         "preco": "12,90",
         "imagem": "img/salada.jpg",
-        "categoria": "armonizar",
+        "categoria": "harmonizar",
         "avaliacoes": [
           {
             "nome": "Victor Sarro",
@@ -83,7 +83,7 @@ var conteudos = {
         "descricao": "Ingredientes: Pão recheado com queijo derretido e bacon crocante. Valor nutricional: Proteínas (queijo e bacon), carboidratos (pão), gordura (bacon). Alergênicos: Glúten (pão), laticínios (queijo), carne (bacon).",
         "preco": "14,50",
         "imagem": "img/pao.jpg",
-        "categoria": "armonizar",
+        "categoria": "harmonizar",
         "avaliacoes": [
           {
             "nome": "Fábio Porchat",
@@ -98,7 +98,7 @@ var conteudos = {
         "descricao": "Ingredientes: Tiras de queijo empanadas servidas com molho de pimenta Valor nutricional: Rica em proteínas (queijo), gordura (empanado) e carboidratos (molho de pimenta). Alergênicos: Laticínios (queijo), glúten (empanado).",
         "preco": "14,50",
         "imagem": "img/queijo.jpg",
-        "categoria": "armonizar",
+        "categoria": "harmonizar",
         "avaliacoes": [
           {
             "nome": "Bruna louise",

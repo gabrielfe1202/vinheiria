@@ -133,7 +133,7 @@ jQuery(document).ready(function () {
     const user = document.getElementById("username").value;
     const pass = document.getElementById("password").value;
 
-    if (user == "user" && pass == "1234") {
+    if (user == "1234" && pass == "1234") {
       window.location.href = "pedidoFechado.html"
       DeletaCarrinho()
     } else {

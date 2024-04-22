@@ -21,6 +21,9 @@
     <link href="Scripts/pnotify/dist/pnotify.css" rel="stylesheet">
     <link href="Scripts/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
     <link href="Scripts/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
+    <link rel="stylesheet" href="Scripts/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="Scripts/owlcarousel/assets/css/docs.theme.min.css">
+    <link rel="stylesheet" href="Scripts/owlcarousel/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -41,7 +44,7 @@
                     <a class="nav-link" href="home.html">Home</a>
                   </li>                                  
                   <li class="nav-item">
-                    <a class="nav-link" href="armonizacoes.html">Armonizações</a>
+                    <a class="nav-link" href="armonizacoes.html">harmonizações</a>
                   </li> 
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="loja.html?categoria=all" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,7 +53,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
                       <a class="dropdown-item" href="loja.html?categoria=all">Completo</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="loja.html?categoria=armonizar">Para armonizar</a>
+                      <a class="dropdown-item" href="loja.html?categoria=harmonizar">Para harmonizar</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="loja.html?categoria=jantar">Para jantar</a>
                       <div class="dropdown-divider"></div>
@@ -79,9 +82,17 @@
         </nav>-->
     </header>
 
-    <section class="banner">        
-        <h1>Os melhores vinhos<br>pra você</h1>
-    </section>
+    <div class="owl-carousel owl-theme">
+        <div class="item banner">
+            <h1>Os melhores vinhos<br>pra você</h1>
+        </div>
+        <div class="item banner">
+            <h1>Os melhores vinhos<br>pra você</h1>
+        </div>
+        <div class="item banner">
+            <h1>Os melhores vinhos<br>pra você</h1>
+        </div>
+      </div>
   
     <section style="padding: 45px 0px;">
         <div class="container">
@@ -91,9 +102,9 @@
             <div class="row">
                 <div class="col-md-4" style="padding-top: 20px;">
                     <div style="overflow: hidden;">
-                        <div class="loja" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url('img/armonizar.jpg');">                   
-                            <p class="texto">Para armonizar</p>
-                            <a class="botao" href="loja.html?categoria=armonizar">Loja</a>
+                        <div class="loja" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url('img/harmonizar.jpg');">                   
+                            <p class="texto">Para harmonizar</p>
+                            <a class="botao" href="loja.html?categoria=harmonizar">Loja</a>
                         </div>
                     </div>
                 </div>     
@@ -173,8 +184,19 @@
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="Scripts/pnotify/dist/pnotify.js"></script>
     <script src="Scripts/pnotify/dist/pnotify.buttons.js"></script>
-    <script src="Scripts/pnotify/dist/pnotify.nonblock.js"></script>
+    <script src="Scripts/pnotify/dist/pnotify.nonblock.js"></script>    
+    <script src="Scripts/owlcarousel/owl.carousel.js"></script>
     <script src="dados.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js"></script>    
+    <script>
+        $(document).ready(function() {
+          $('.owl-carousel').owlCarousel({
+            items: 1,
+            margin: 10,
+            autoHeight: false,
+            nav: true
+          });
+        })
+      </script>
 </body>
 </html>
