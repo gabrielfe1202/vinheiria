@@ -58,6 +58,18 @@ if (document.getElementById("titulo_prato") != null) {
     cont_avaliacao += `</div>`
   }
   document.getElementById("avaliacoes").innerHTML = cont_avaliacao
+
+  var itemRecomenda = null;
+  conteudos.conteudos.forEach(function(item) {
+      if (item.categoria === prato.categoria) {
+        itemRecomenda = item;
+      }
+    });
+
+    document.getElementById("imagem_rec").src = itemRecomenda.imagem;
+    document.getElementById("titulo_rec").innerText = itemRecomenda.titulo;
+    document.getElementById("botao_rec").href = "conteudo.html?cod=" + itemRecomenda.cod
+
 } else {
 
   var pratos = loja["pratos"];
@@ -108,6 +120,7 @@ if (document.getElementById("titulo_conteudo") != null) {
   document.getElementById("titulo_conteudo").innerHTML = conteudoExibir.titulo
   document.getElementById("texto_conteudo").innerHTML = conteudoExibir.texto
   document.getElementById("imagem_conteudo").src = conteudoExibir.imagem;
+  
 }
 
 if (document.getElementById("conteudos") != null) {
