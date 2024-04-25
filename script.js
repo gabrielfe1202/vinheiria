@@ -108,6 +108,7 @@ for (var i = 0; i < conteudos["conteudos"].length; i++) {
   container += `<img class="imagem" src="${conteudo[i].imagem}" style="width: 100%"/>`
   container += '</div>'
   container += '<div class="col-md-8">';
+  container += `<p class="nome">${conteudo[i].titulo}</p>`
   container += `<p class="descricao">${conteudo[i].chamada}</p>`
   container += `<a class="botao" href="conteudo.html?cod=${conteudo[i].cod}">Ver mais</a>`
   container += '</div>'
@@ -127,15 +128,25 @@ if (document.getElementById("conteudos") != null) {
   document.getElementById("conteudos").innerHTML = container
 }
 
-
-
+function convertFormToJSON(form) {
+  const array = $(form).serializeArray(); // Encodes the set of form elements as an array of names and values.
+  const json = {};
+  $.each(array, function () {
+    json[this.name] = this.value || "";
+  });
+  return json;
+}
 
 jQuery(document).ready(function () {
 
-  jQuery('#form_contato').submit(function () {
+  jQuery('#form_contato').submit(function (e) {
+    e.preventDefault();
+    const form = $(e.target);
+    const json = convertFormToJSON(form);
+    console.log(json);
     new PNotify({
       title: 'Enviado',
-      text: "Sua mensagem foi enviada com sucesso, logo entraremos em contato",
+      text: `Olá ${json.nome},<br /> Sua mensagem foi enviada com sucesso, logo entraremos em contato`,
       type: 'success',
       styling: 'bootstrap3'
     });
