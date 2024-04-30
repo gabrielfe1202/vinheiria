@@ -4,6 +4,7 @@ Gustavo Ramalho RM 554582
 Gabriel Ferreira Flora Carvalheiro RM 556476  
 Hugo Okwudiri RM 557035  
 Alexandre Assis do Nascimento RM 558927
+Mateus da Costa Leme RM 557803
 
 
 ### CheckPoint 02 webdev e front-end fiap 2024  
