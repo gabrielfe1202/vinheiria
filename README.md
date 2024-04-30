@@ -2,7 +2,6 @@
 Albert Katri RM 556544  
 Gustavo Ramalho RM 554582  
 Gabriel Ferreira Flora Carvalheiro RM 556476  
-Hugo Okwudiri RM 557035  
 Alexandre Assis do Nascimento RM 558927  
 Mateus da Costa Leme RM 557803
 
